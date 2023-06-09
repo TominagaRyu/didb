@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商品管理</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px double black;
+            padding: 8px;
+        }
+
+        table.double-border th, table.double-border td {
+            border-width: 2px;
+        }
+    </style>
+</head>
+<body>
+<h1>商品管理</h1>
+<table class="double-border">
+    <tr>
+        <th>ID</th>
+        <th>商品名</th>
+        <th>値段</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="product : ${productData}">
+        <td><a th:href="@{/product/{id}(id=${product.id})}" th:text="${product.id}"></a></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td>
+            <form th:action="@{/product/delete/{id}(id=${product.id})}" method="get">
+                <button type="submit">削除</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<a th:href="@{/insert}">新規追加</a>
+</body>
+</html>

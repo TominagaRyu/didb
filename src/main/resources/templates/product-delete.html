@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商品削除</title>
+</head>
+<body>
+<h1>商品削除</h1>
+<p>以下の商品を削除しますか？</p>
+<form th:action="@{/product/delete/{id}(id=${product.id})}" method="post">
+<p>商品ID: <span th:text="${product.id}"></span></p>
+<p>商品名: <span th:text="${product.name}"></span></p>
+<p>価格: <span th:text="${product.price}"></span></p>
+    <button type="submit">削除</button>
+</form>
+<p><button onclick="window.location.href='/product-list'">キャンセル</button></p>
+</form>
+</body>
+</html>
+<!--<h2>商品削除</h2>-->
+<!--<p>以下の商品を削除します。よろしいですか？</p>-->
+
+<!--<form th:action="@{/product/delete/{id}(id=${product.id})}" method="post">-->
+<!--    <input type="hidden" name="_method" value="post" />-->
+<!--    <input type="hidden" name="id" th:value="${product.id}" />-->
+
+<!--    <p>商品名: <span th:text="${product.name}"></span></p>-->
+<!--    <p>価格: <span th:text="${product.price}"></span></p>-->
+
+<!--    <button type="submit">削除</button>-->
+

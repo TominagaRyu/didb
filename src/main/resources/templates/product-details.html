@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>商品詳細</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333333;
+        margin-bottom: 30px;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    .product-info {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .product-label {
+        font-weight: bold;
+        width: 100px;
+        display: inline-block;
+        color: #666666;
+    }
+
+    .product-value {
+        margin-left: 10px;
+        color: #333333;
+    }
+</style>
+
+</head>
+<body>
+<h1>商品詳細</h1>
+<table>
+  <tr>
+    <td>id :</td>
+    <td th:text="${SelectData.id}"></td>
+  </tr>
+  <tr>
+    <td>商品名 :</td>
+    <td th:text="${SelectData.name}"></td>
+  </tr>
+  <tr>
+    <td>値段 :</td>
+    <td th:text="${SelectData.price} + '円'"></td>
+  </tr>
+</table>
+
+<td><a th:href="@{/product/update/{id}(id=${SelectData.id})}">修正</a></td>
+</body>
+</html>

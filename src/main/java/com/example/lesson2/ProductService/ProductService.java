@@ -2,6 +2,7 @@ package com.example.lesson2.ProductService;
 
 import com.example.lesson2.ProductRecord.ProductRecord;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface ProductService {
@@ -15,4 +16,5 @@ public interface ProductService {
 
     public int delete(int id);
 
+    //List<Product> getAllProducts();
 }

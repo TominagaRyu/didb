@@ -1,4 +1,7 @@
 package com.example.lesson2.ProductRecord;
 
-public record ProductRecord(int id,String name ,int price) {
+import jakarta.validation.constraints.Digits;
+
+public record ProductRecord(int id, String name , int price) {
+
 }
